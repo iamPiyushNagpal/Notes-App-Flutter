@@ -87,6 +87,52 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        actions: [
+          PopupMenuButton(
+            onSelected: (val) {
+              if (val == 0) {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      content:
+                          Text("Are you sure you want to delete all notes?"),
+                      actions: [
+                        FlatButton(
+                          onPressed: () {
+                            controller.deleteAllNotes();
+                            Get.back();
+                          },
+                          child: Text("Yes"),
+                        ),
+                        FlatButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: Text("No"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 0,
+                child: Text(
+                  "Delete All Notes",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ],
       ),
       body: GetBuilder<AddNewNoteController>(
         builder: (_) => controller.isEmpty() ? emptyNotes() : viewNotes(),
