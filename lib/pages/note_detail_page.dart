@@ -60,7 +60,6 @@ class NoteDetailPage extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.only(
-          top: 15,
           left: 15,
           right: 15,
         ),
@@ -68,6 +67,9 @@ class NoteDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 10,
+              ),
               Text(
                 controller.notes[i].title,
                 style: TextStyle(
