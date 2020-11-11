@@ -11,6 +11,13 @@ class AddNewNotePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Add New Note",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colors.black,
         ),
       ),
       body: SingleChildScrollView(

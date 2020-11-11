@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
       child: GridView.builder(
         itemCount: controller.notes.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1 / 1.5,
+          childAspectRatio: 1 / 1.25,
           crossAxisCount: 2,
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0,
@@ -48,10 +48,10 @@ class HomePage extends StatelessWidget {
                   Text(
                     controller.notes[index].title,
                     style: TextStyle(
-                      fontSize: 23,
+                      fontSize: 21,
                       fontWeight: FontWeight.bold,
                     ),
-                    maxLines: 3,
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
                   ),
@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       controller.notes[index].content,
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 16,
                       ),
                     ),
                   ),
