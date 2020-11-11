@@ -42,6 +42,14 @@ class AddNewNoteController extends GetxController {
     Get.back();
   }
 
+  void deleteNote(int id) async {
+    Note note = Note(
+      id: id,
+    );
+    await DatabaseHelper.instance.deleteNote(note);
+    getAllNotes();
+  }
+
   void deleteAllNotes() async {
     await DatabaseHelper.instance.deleteAllNotes();
     getAllNotes();
