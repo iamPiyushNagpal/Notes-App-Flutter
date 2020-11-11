@@ -1,5 +1,6 @@
 import 'package:Notes/controllers/add_new_note_controller.dart';
 import 'package:Notes/pages/home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,8 +27,31 @@ class NoteDetailPage extends StatelessWidget {
                           vertical: 15,
                         ),
                         onPressed: () {
-                          controller.deleteNote(controller.notes[i].id);
-                          Get.offAll(HomePage());
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: Text(
+                                    "Are you sure you want to delete the note?"),
+                                actions: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      controller
+                                          .deleteNote(controller.notes[i].id);
+                                      Get.offAll(HomePage());
+                                    },
+                                    child: Text("Yes"),
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {
+                                      Get.back();
+                                    },
+                                    child: Text("No"),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
                         },
                         child: Row(
                           children: [
