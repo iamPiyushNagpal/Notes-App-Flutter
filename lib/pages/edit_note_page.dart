@@ -71,7 +71,8 @@ class EditNotePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.updateNote(controller.notes[i].id);
+          controller.updateNote(
+              controller.notes[i].id, controller.notes[i].dateTimeCreated);
         },
         child: Icon(Icons.save),
       ),

@@ -35,6 +35,7 @@ class DatabaseHelper {
         title TEXT NOT NULL,
         content TEXT NOT NULL,
         dateTimeEdited TEXT NOT NULL,
+        dateTimeCreated TEXT NOT NULL
       )
       ''');
   }
@@ -84,6 +85,7 @@ class DatabaseHelper {
           title: maps[index]["title"],
           content: maps[index]["content"],
           dateTimeEdited: maps[index]["dateTimeEdited"],
+          dateTimeCreated: maps[index]["dateTimeCreated"],
         );
       },
     );

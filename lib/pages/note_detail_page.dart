@@ -37,6 +37,7 @@ class NoteDetailPage extends StatelessWidget {
               Get.bottomSheet(
                 Container(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       FlatButton(
                         padding: EdgeInsets.symmetric(
@@ -87,6 +88,18 @@ class NoteDetailPage extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 20,
+                        ),
+                        child: Text(
+                          "Created :  " + controller.notes[i].dateTimeCreated,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
