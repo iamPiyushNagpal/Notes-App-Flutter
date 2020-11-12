@@ -1,8 +1,9 @@
-import 'package:Notes/models/note.dart';
-import 'package:Notes/services/database_services/database_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+
+import '../models/note.dart';
+import '../services/database_services/database_helper.dart';
 
 class AddNewNoteController extends GetxController {
   final titleController = TextEditingController();

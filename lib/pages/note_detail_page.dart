@@ -1,8 +1,9 @@
-import 'package:Notes/controllers/add_new_note_controller.dart';
-import 'package:Notes/pages/edit_note_page.dart';
-import 'package:Notes/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../controllers/add_new_note_controller.dart';
+import '../pages/edit_note_page.dart';
+import '../pages/home_page.dart';
 
 class NoteDetailPage extends StatelessWidget {
   final AddNewNoteController controller = Get.find();
