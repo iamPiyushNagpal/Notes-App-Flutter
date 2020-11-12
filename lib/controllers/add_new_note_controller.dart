@@ -29,7 +29,8 @@ class AddNewNoteController extends GetxController {
     Note note = Note(
       title: title,
       content: content,
-      date: DateFormat("MMM dd, yyyy").format(DateTime.now()),
+      dateTimeEdited:
+          DateFormat("MMM dd, yyyy  HH:mm:ss").format(DateTime.now()),
     );
     await DatabaseHelper.instance.addNote(note);
     titleController.text = "";
@@ -58,7 +59,8 @@ class AddNewNoteController extends GetxController {
       id: id,
       title: title,
       content: content,
-      date: DateFormat("MMM dd, yyyy").format(DateTime.now()),
+      dateTimeEdited:
+          DateFormat("MMM dd, yyyy HH:mm:ss").format(DateTime.now()),
     );
     await DatabaseHelper.instance.updateNote(note);
     titleController.text = "";

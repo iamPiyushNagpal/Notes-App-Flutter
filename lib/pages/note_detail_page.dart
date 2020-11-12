@@ -122,7 +122,7 @@ class NoteDetailPage extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  controller.notes[i].date,
+                  "Last Edited : " + controller.notes[i].dateTimeEdited,
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,

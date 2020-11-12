@@ -34,7 +34,7 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY,
         title TEXT NOT NULL,
         content TEXT NOT NULL,
-        date TEXT NOT NULL
+        dateTimeEdited TEXT NOT NULL,
       )
       ''');
   }
@@ -83,7 +83,7 @@ class DatabaseHelper {
           id: maps[index]["id"],
           title: maps[index]["title"],
           content: maps[index]["content"],
-          date: maps[index]["date"],
+          dateTimeEdited: maps[index]["dateTimeEdited"],
         );
       },
     );

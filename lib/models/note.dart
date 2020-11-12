@@ -2,13 +2,13 @@ class Note {
   int id;
   String title;
   String content;
-  String date;
+  String dateTimeEdited;
 
   Note({
     this.id,
     this.content,
     this.title,
-    this.date,
+    this.dateTimeEdited,
   });
 
   Map<String, dynamic> toMap() {
@@ -16,7 +16,7 @@ class Note {
       "id": id,
       "title": title,
       "content": content,
-      "date": date,
+      "dateTimeEdited": dateTimeEdited,
     };
   }
 }
