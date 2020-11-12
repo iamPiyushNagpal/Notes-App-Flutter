@@ -1,4 +1,5 @@
 import 'package:Notes/controllers/add_new_note_controller.dart';
+import 'package:Notes/pages/edit_note_page.dart';
 import 'package:Notes/pages/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,17 @@ class NoteDetailPage extends StatelessWidget {
           color: Colors.black,
         ),
         actions: [
+          IconButton(
+            icon: Icon(
+              Icons.edit,
+            ),
+            onPressed: () {
+              Get.to(
+                EditNotePage(),
+                arguments: i,
+              );
+            },
+          ),
           IconButton(
             icon: Icon(
               Icons.more_vert,
@@ -86,46 +98,48 @@ class NoteDetailPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.only(
-          left: 15,
-          right: 15,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                controller.notes[i].title,
-                style: TextStyle(
-                  fontSize: 27,
-                  fontWeight: FontWeight.w900,
+      body: GetBuilder<AddNewNoteController>(
+        builder: (_) => Container(
+          padding: EdgeInsets.only(
+            left: 15,
+            right: 15,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                controller.notes[i].date,
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[600],
+                Text(
+                  controller.notes[i].title,
+                  style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                controller.notes[i].content,
-                style: TextStyle(
-                  fontSize: 22,
+                SizedBox(
+                  height: 15,
                 ),
-              ),
-            ],
+                Text(
+                  controller.notes[i].date,
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  controller.notes[i].content,
+                  style: TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

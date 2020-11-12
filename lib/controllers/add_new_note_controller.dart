@@ -7,6 +7,8 @@ import 'package:intl/intl.dart';
 class AddNewNoteController extends GetxController {
   final titleController = TextEditingController();
   final contentController = TextEditingController();
+  final editedTitleController = TextEditingController();
+  final editedContentController = TextEditingController();
   var notes = List<Note>();
 
   @override
@@ -53,6 +55,22 @@ class AddNewNoteController extends GetxController {
   void deleteAllNotes() async {
     await DatabaseHelper.instance.deleteAllNotes();
     getAllNotes();
+  }
+
+  void updateNote(int id) async {
+    final title = titleController.text;
+    final content = contentController.text;
+    Note note = Note(
+      id: id,
+      title: title,
+      content: content,
+      date: DateFormat("MMM dd, yyyy").format(DateTime.now()),
+    );
+    await DatabaseHelper.instance.updateNote(note);
+    titleController.text = "";
+    contentController.text = "";
+    getAllNotes();
+    Get.back();
   }
 
   void getAllNotes() async {
