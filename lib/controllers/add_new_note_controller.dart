@@ -7,19 +7,12 @@ import 'package:intl/intl.dart';
 class AddNewNoteController extends GetxController {
   final titleController = TextEditingController();
   final contentController = TextEditingController();
-  final editedTitleController = TextEditingController();
-  final editedContentController = TextEditingController();
   var notes = List<Note>();
 
   @override
   void onInit() {
     getAllNotes();
     super.onInit();
-  }
-
-  void length() {
-    // print(notes[6].content);
-    print(notes.length);
   }
 
   bool isEmpty() {

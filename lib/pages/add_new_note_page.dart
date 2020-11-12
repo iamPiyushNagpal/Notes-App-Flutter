@@ -68,8 +68,6 @@ class AddNewNotePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           controller.addNoteToDatabase();
-          //controller.deleteAllNotes();
-          controller.length();
         },
         child: Icon(
           Icons.check,

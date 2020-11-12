@@ -1,7 +1,6 @@
 import 'package:Notes/controllers/add_new_note_controller.dart';
 import 'package:Notes/pages/edit_note_page.dart';
 import 'package:Notes/pages/home_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
