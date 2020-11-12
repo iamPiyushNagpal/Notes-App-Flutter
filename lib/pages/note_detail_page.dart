@@ -41,7 +41,7 @@ class NoteDetailPage extends StatelessWidget {
                     children: [
                       FlatButton(
                         padding: EdgeInsets.symmetric(
-                          vertical: 15,
+                          vertical: 20,
                         ),
                         onPressed: () {
                           showDialog(
@@ -93,6 +93,7 @@ class NoteDetailPage extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.only(
                           left: 20,
+                          top: 10,
                         ),
                         child: Text(
                           "Created :  " + controller.notes[i].dateTimeCreated,
