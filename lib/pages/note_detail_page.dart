@@ -113,46 +113,48 @@ class NoteDetailPage extends StatelessWidget {
         ],
       ),
       body: GetBuilder<AddNewNoteController>(
-        builder: (_) => Container(
-          padding: EdgeInsets.only(
-            left: 15,
-            right: 15,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  controller.notes[i].title,
-                  style: TextStyle(
-                    fontSize: 27,
-                    fontWeight: FontWeight.w900,
+        builder: (_) => Scrollbar(
+          child: Container(
+            padding: EdgeInsets.only(
+              left: 15,
+              right: 15,
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 10,
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  "Last Edited : " + controller.notes[i].dateTimeEdited,
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[600],
+                  Text(
+                    controller.notes[i].title,
+                    style: TextStyle(
+                      fontSize: 27,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  controller.notes[i].content,
-                  style: TextStyle(
-                    fontSize: 22,
+                  SizedBox(
+                    height: 15,
                   ),
-                ),
-              ],
+                  Text(
+                    "Last Edited : " + controller.notes[i].dateTimeEdited,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    controller.notes[i].content,
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
