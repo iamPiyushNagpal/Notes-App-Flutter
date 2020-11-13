@@ -59,14 +59,18 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Flexible(
-                    child: Text(
-                      controller.notes[index].content,
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                      maxLines: 7,
+                  Text(
+                    controller.notes[index].content,
+                    style: TextStyle(
+                      fontSize: 17,
                     ),
+                    maxLines: 6,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    controller.notes[index].dateTimeEdited,
                   ),
                 ],
               ),
