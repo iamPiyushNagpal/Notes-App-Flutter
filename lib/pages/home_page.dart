@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../controllers/add_new_note_controller.dart';
 import '../pages/add_new_note_page.dart';
@@ -21,14 +22,12 @@ class HomePage extends StatelessWidget {
   Widget viewNotes() {
     return Container(
       padding: EdgeInsets.all(10),
-      child: GridView.builder(
+      child: StaggeredGridView.countBuilder(
         itemCount: controller.notes.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1 / 1.25,
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
-        ),
+        crossAxisCount: 2,
+        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 10.0,
+        staggeredTileBuilder: (index) => StaggeredTile.fit(1),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
@@ -44,6 +43,7 @@ class HomePage extends StatelessWidget {
               ),
               padding: EdgeInsets.all(15),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -65,6 +65,7 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                       ),
+                      maxLines: 7,
                     ),
                   ),
                 ],

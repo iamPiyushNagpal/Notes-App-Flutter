@@ -28,6 +28,7 @@ dependencies:
   path_provider:
   intl:
   google_fonts:
+  flutter_staggered_grid_view:
 
 
   # The following adds the Cupertino Icons font to your application.
