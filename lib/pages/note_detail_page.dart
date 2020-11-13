@@ -153,6 +153,9 @@ class NoteDetailPage extends StatelessWidget {
                       fontSize: 22,
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),

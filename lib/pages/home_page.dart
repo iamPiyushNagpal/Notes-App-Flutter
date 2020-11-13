@@ -21,7 +21,11 @@ class HomePage extends StatelessWidget {
 
   Widget viewNotes() {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(
+        top: 10,
+        right: 10,
+        left: 10,
+      ),
       child: StaggeredGridView.countBuilder(
         itemCount: controller.notes.length,
         crossAxisCount: 2,
