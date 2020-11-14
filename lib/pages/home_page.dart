@@ -41,6 +41,32 @@ class HomePage extends StatelessWidget {
                   arguments: index,
                 );
               },
+              onLongPress: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      content:
+                          Text("Are you sure you want to delete the note?"),
+                      actions: [
+                        FlatButton(
+                          onPressed: () {
+                            controller.deleteNote(controller.notes[index].id);
+                            Get.back();
+                          },
+                          child: Text("Yes"),
+                        ),
+                        FlatButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: Text("No"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
