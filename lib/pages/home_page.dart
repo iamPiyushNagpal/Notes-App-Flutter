@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../controllers/add_new_note_controller.dart';
 import '../pages/add_new_note_page.dart';
 import '../pages/note_detail_page.dart';
+import '../widgets/alertdialog_widget.dart';
 
 class HomePage extends StatelessWidget {
   final controller = Get.put(AddNewNoteController());
@@ -45,24 +46,15 @@ class HomePage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return AlertDialog(
-                      content:
-                          Text("Are you sure you want to delete the note?"),
-                      actions: [
-                        FlatButton(
-                          onPressed: () {
-                            controller.deleteNote(controller.notes[index].id);
-                            Get.back();
-                          },
-                          child: Text("Yes"),
-                        ),
-                        FlatButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          child: Text("No"),
-                        ),
-                      ],
+                    return AlertDialogWidget(
+                      contentText: "Are you sure you want to delete the note?",
+                      confirmFunction: () {
+                        controller.deleteNote(controller.notes[index].id);
+                        Get.back();
+                      },
+                      declineFunction: () {
+                        Get.back();
+                      },
                     );
                   },
                 );
@@ -135,24 +127,15 @@ class HomePage extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return AlertDialog(
-                      content:
-                          Text("Are you sure you want to delete all notes?"),
-                      actions: [
-                        FlatButton(
-                          onPressed: () {
-                            controller.deleteAllNotes();
-                            Get.back();
-                          },
-                          child: Text("Yes"),
-                        ),
-                        FlatButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          child: Text("No"),
-                        ),
-                      ],
+                    return AlertDialogWidget(
+                      contentText: "Are you sure you want to delete all notes?",
+                      confirmFunction: () {
+                        controller.deleteAllNotes();
+                        Get.back();
+                      },
+                      declineFunction: () {
+                        Get.back();
+                      },
                     );
                   },
                 );

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../controllers/add_new_note_controller.dart';
 import '../pages/edit_note_page.dart';
 import '../pages/home_page.dart';
+import '../widgets/alertdialog_widget.dart';
 
 class NoteDetailPage extends StatelessWidget {
   final AddNewNoteController controller = Get.find();
@@ -47,25 +48,16 @@ class NoteDetailPage extends StatelessWidget {
                           showDialog(
                             context: context,
                             builder: (context) {
-                              return AlertDialog(
-                                content: Text(
-                                    "Are you sure you want to delete the note?"),
-                                actions: [
-                                  FlatButton(
-                                    onPressed: () {
-                                      controller
-                                          .deleteNote(controller.notes[i].id);
-                                      Get.offAll(HomePage());
-                                    },
-                                    child: Text("Yes"),
-                                  ),
-                                  FlatButton(
-                                    onPressed: () {
-                                      Get.back();
-                                    },
-                                    child: Text("No"),
-                                  ),
-                                ],
+                              return AlertDialogWidget(
+                                contentText:
+                                    "Are you sure you want to delete the note?",
+                                confirmFunction: () {
+                                  controller.deleteNote(controller.notes[i].id);
+                                  Get.offAll(HomePage());
+                                },
+                                declineFunction: () {
+                                  Get.back();
+                                },
                               );
                             },
                           );
