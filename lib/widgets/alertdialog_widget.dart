@@ -19,12 +19,12 @@ class AlertDialogWidget extends StatelessWidget {
       ),
       actions: [
         FlatButton(
-          onPressed: confirmFunction,
-          child: Text("Yes"),
-        ),
-        FlatButton(
           onPressed: declineFunction,
           child: Text("No"),
+        ),
+        FlatButton(
+          onPressed: confirmFunction,
+          child: Text("Yes"),
         ),
       ],
     );
