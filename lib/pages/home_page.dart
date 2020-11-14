@@ -20,67 +20,69 @@ class HomePage extends StatelessWidget {
   }
 
   Widget viewNotes() {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 10,
-        right: 10,
-        left: 10,
-      ),
-      child: StaggeredGridView.countBuilder(
-        itemCount: controller.notes.length,
-        crossAxisCount: 2,
-        crossAxisSpacing: 10.0,
-        mainAxisSpacing: 10.0,
-        staggeredTileBuilder: (index) => StaggeredTile.fit(1),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Get.to(
-                NoteDetailPage(),
-                arguments: index,
-              );
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              padding: EdgeInsets.all(15),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    controller.notes[index].title,
-                    style: TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold,
+    return Scrollbar(
+      child: Container(
+        padding: EdgeInsets.only(
+          top: 10,
+          right: 10,
+          left: 10,
+        ),
+        child: StaggeredGridView.countBuilder(
+          itemCount: controller.notes.length,
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+          staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Get.to(
+                  NoteDetailPage(),
+                  arguments: index,
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsets.all(15),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      controller.notes[index].title,
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: false,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    controller.notes[index].content,
-                    style: TextStyle(
-                      fontSize: 17,
+                    SizedBox(
+                      height: 10,
                     ),
-                    maxLines: 6,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    controller.notes[index].dateTimeEdited,
-                  ),
-                ],
+                    Text(
+                      controller.notes[index].content,
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                      maxLines: 6,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      controller.notes[index].dateTimeEdited,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
