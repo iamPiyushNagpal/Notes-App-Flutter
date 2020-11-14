@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:share/share.dart';
 
 import '../models/note.dart';
 import '../services/database_services/database_helper.dart';
@@ -75,5 +76,9 @@ class AddNewNoteController extends GetxController {
   void getAllNotes() async {
     notes = await DatabaseHelper.instance.getNoteList();
     update();
+  }
+
+  void shareNote(String title, String content, String dateTimeEdited) {
+    Share.share("$title \n\n$dateTimeEdited\n\n$content");
   }
 }

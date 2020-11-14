@@ -90,6 +90,37 @@ class NoteDetailPage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      FlatButton(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 20,
+                        ),
+                        onPressed: () {
+                          controller.shareNote(
+                            controller.notes[i].title,
+                            controller.notes[i].content,
+                            controller.notes[i].dateTimeEdited,
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              Icons.share,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "Share",
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       Container(
                         padding: EdgeInsets.only(
                           left: 20,
