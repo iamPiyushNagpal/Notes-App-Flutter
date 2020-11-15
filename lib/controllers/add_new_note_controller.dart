@@ -25,8 +25,11 @@ class AddNewNoteController extends GetxController {
   }
 
   void addNoteToDatabase() async {
-    final title = titleController.text;
-    final content = contentController.text;
+    String title = titleController.text;
+    String content = contentController.text;
+    if (title.isNullOrBlank) {
+      title = "Unnamed Title";
+    }
     Note note = Note(
       title: title,
       content: content,
