@@ -55,7 +55,7 @@ class AddNewNotePage extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Content",
                   hintStyle: TextStyle(
-                    fontSize: 17,
+                    fontSize: 22,
                   ),
                   border: InputBorder.none,
                 ),
