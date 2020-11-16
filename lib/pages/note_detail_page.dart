@@ -149,7 +149,7 @@ class NoteDetailPage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  SelectableText(
                     controller.notes[i].title,
                     style: TextStyle(
                       fontSize: 27,
@@ -170,7 +170,7 @@ class NoteDetailPage extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
+                  SelectableText(
                     controller.notes[i].content,
                     style: TextStyle(
                       fontSize: 22,
