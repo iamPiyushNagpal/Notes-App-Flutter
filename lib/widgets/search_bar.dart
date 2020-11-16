@@ -40,7 +40,11 @@ class SearchBar extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     final suggestionList = query.isEmpty
         ? controller.notes
-        : controller.notes.where((p) => p.content.contains(query)).toList();
+        : controller.notes.where(
+            (p) {
+              return p.title.contains(query) || p.content.contains(query);
+            },
+          ).toList();
     return Container(
       padding: EdgeInsets.only(
         top: 10,
