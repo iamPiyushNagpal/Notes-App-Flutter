@@ -42,7 +42,8 @@ class SearchBar extends SearchDelegate {
         ? controller.notes
         : controller.notes.where(
             (p) {
-              return p.title.contains(query) || p.content.contains(query);
+              return p.title.toLowerCase().contains(query.toLowerCase()) ||
+                  p.content.toLowerCase().contains(query.toLowerCase());
             },
           ).toList();
     return Container(
