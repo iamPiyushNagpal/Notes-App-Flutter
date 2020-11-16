@@ -1,3 +1,4 @@
+import 'package:Notes/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -121,6 +122,12 @@ class HomePage extends StatelessWidget {
           color: Colors.black,
         ),
         actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: SearchBar());
+            },
+          ),
           PopupMenuButton(
             onSelected: (val) {
               if (val == 0) {
