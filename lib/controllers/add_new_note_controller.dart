@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:share/share.dart';
+import 'package:string_stats/string_stats.dart';
 
 import '../models/note.dart';
 import '../services/database_services/database_helper.dart';
@@ -10,6 +11,8 @@ class AddNewNoteController extends GetxController {
   final titleController = TextEditingController();
   final contentController = TextEditingController();
   var notes = List<Note>();
+  int contentWordCount = 0;
+  int contentCharCount = 0;
 
   @override
   void onInit() {
@@ -39,6 +42,8 @@ class AddNewNoteController extends GetxController {
           DateFormat("MMM dd, yyyy HH:mm:ss").format(DateTime.now()),
     );
     await DatabaseHelper.instance.addNote(note);
+    contentWordCount = wordCount(content);
+    contentCharCount = charCount(content);
     titleController.text = "";
     contentController.text = "";
     getAllNotes();
@@ -70,6 +75,8 @@ class AddNewNoteController extends GetxController {
       dateTimeCreated: dTCreated,
     );
     await DatabaseHelper.instance.updateNote(note);
+    contentWordCount = wordCount(content);
+    contentCharCount = charCount(content);
     titleController.text = "";
     contentController.text = "";
     getAllNotes();
