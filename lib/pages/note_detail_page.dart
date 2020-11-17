@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:string_stats/string_stats.dart';
 
-import '../controllers/add_new_note_controller.dart';
+import '../controllers/note_controller.dart';
 import '../pages/edit_note_page.dart';
 import '../pages/home_page.dart';
 import '../widgets/alertdialog_widget.dart';
 
 class NoteDetailPage extends StatelessWidget {
-  final AddNewNoteController controller = Get.find();
+  final NoteController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -164,7 +163,7 @@ class NoteDetailPage extends StatelessWidget {
           ),
         ],
       ),
-      body: GetBuilder<AddNewNoteController>(
+      body: GetBuilder<NoteController>(
         builder: (_) => Scrollbar(
           child: Container(
             padding: EdgeInsets.only(

@@ -7,7 +7,7 @@ import 'package:string_stats/string_stats.dart';
 import '../models/note.dart';
 import '../services/database_services/database_helper.dart';
 
-class AddNewNoteController extends GetxController {
+class NoteController extends GetxController {
   final titleController = TextEditingController();
   final contentController = TextEditingController();
   var notes = List<Note>();

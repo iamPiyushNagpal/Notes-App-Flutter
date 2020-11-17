@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../pages/note_detail_page.dart';
-import '../controllers/add_new_note_controller.dart';
+import '../controllers/note_controller.dart';
 
 class SearchBar extends SearchDelegate {
-  final AddNewNoteController controller = Get.find();
+  final NoteController controller = Get.find();
 
   @override
   List<Widget> buildActions(BuildContext context) {

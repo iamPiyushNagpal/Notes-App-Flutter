@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/add_new_note_controller.dart';
+import '../controllers/note_controller.dart';
 
 class AddNewNotePage extends StatelessWidget {
-  final AddNewNoteController controller = Get.find();
+  final NoteController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
