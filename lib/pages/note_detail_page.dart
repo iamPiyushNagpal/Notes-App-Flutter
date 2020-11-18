@@ -14,6 +14,7 @@ class NoteDetailPage extends StatelessWidget {
     final int i = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
           color: Colors.black,

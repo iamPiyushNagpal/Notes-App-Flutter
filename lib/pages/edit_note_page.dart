@@ -13,6 +13,7 @@ class EditNotePage extends StatelessWidget {
     controller.contentController.text = controller.notes[i].content;
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
           color: Colors.black,
