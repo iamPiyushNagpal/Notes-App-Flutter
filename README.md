@@ -15,12 +15,9 @@ A simple note taking app built with Google's Flutter Framework.
 <table>
   <tr>
 	<td><img src="github_assets/screenshots/Screenshot_1605602423.png"></td>
-    <td><img src="github_assets/screenshots/Screenshot_1605602277.png"></td>
+    	<td><img src="github_assets/screenshots/Screenshot_1605602277.png"></td>
 	<td><img src="github_assets/screenshots/Screenshot_1605616334.png"></td>
-  </tr>
-  <tr>
 	<td><img src="github_assets/screenshots/Screenshot_1605602426.png"></td>
-	<td><img src="github_assets/screenshots/Screenshot_1605602431.png"></td>
-	<td><img src="github_assets/screenshots/Screenshot_1605602456.png"></td>
   </tr>
+	
 </table>
